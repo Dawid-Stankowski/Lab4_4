@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    private int prywatnePole;
+    public int publicznePole;
+    protected int chronionePole;
+
+    public Main() {
+        // Konstruktor dostępny publicznie
+    }
+
+    private void metodaPrywatna() {
+        // Metoda prywatna
+    }
+
+    public void metodaPubliczna() {
+        // Metoda publiczna
+    }
+
+    protected void metodaChroniona() {
+        // Metoda chroniona
+    }
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Main obj = new Main();
+        obj.prywatnePole = 10;   // Niedozowolone
+        obj.publicznePole = 20;    // Dozwolone
+        obj.chronionePole = 30; // Dozwolone
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        obj.metodaPrywatna();
+        obj.metodaPubliczna();
+        obj.metodaChroniona();
     }
 }
